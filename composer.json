@@ -1,0 +1,54 @@
+{
+    "name": "ktomaszewski/koddlo-customer-api",
+    "description": "Repository for the Koddlo - PHP API with Laminas Mezzio tutorial.",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [],
+    "homepage": "https://github.com/ktomaszewski/koddlo-customer-api",
+    "support": {},
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laminas": {
+            "component-whitelist": [
+                "mezzio/mezzio",
+                "mezzio/mezzio-helpers",
+                "mezzio/mezzio-router",
+                "laminas/laminas-httphandlerrunner",
+                "mezzio/mezzio-fastroute"
+            ]
+        }
+    },
+    "require": {
+        "php": "8.0.*",
+        "composer/package-versions-deprecated": "^1.10.99",
+        "laminas/laminas-component-installer": "^2.5.0",
+        "laminas/laminas-config-aggregator": "^1.5.0",
+        "laminas/laminas-diactoros": "^2.6.0",
+        "laminas/laminas-stdlib": "^3.3.1",
+        "laminas/laminas-zendframework-bridge": "^1.2.0",
+        "mezzio/mezzio": "^3.5.0",
+        "mezzio/mezzio-helpers": "^5.6.0",
+        "laminas/laminas-servicemanager": "^3.4",
+        "mezzio/mezzio-fastroute": "^3.0.3"
+    },
+    "require-dev": {
+        "laminas/laminas-development-mode": "^3.3.0",
+        "mezzio/mezzio-tooling": "^1.4.0",
+        "phpspec/prophecy": "^1.10.3",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpunit/phpunit": "^9.4.1",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Api\\": "src/Api/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApiTest\\": "src/Api/test"
+        }
+    }
+}

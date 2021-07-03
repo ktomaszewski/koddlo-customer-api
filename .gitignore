@@ -4,5 +4,11 @@
 # Docker
 docker-compose.yml
 
+# PHP
+vendor/
+phpunit.xml
+.phpunit.cache/
+.phpunit.result.cache
+
 # Other
 .env
