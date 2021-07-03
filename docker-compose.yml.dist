@@ -1,0 +1,27 @@
+services:
+    backend:
+        build:
+            context: 'docker/backend'
+        container_name: 'koddlo-customer-api-backend'
+        image: 'koddlo-customer-api-backend'
+        tty: 'true'
+        restart: 'on-failure'
+        volumes:
+            - '.:/var/www'
+            - './docker/backend/config/php.ini:/usr/local/etc/php/conf.d/000-php.ini'
+            - './docker/backend/config/apache.conf:/etc/apache2/sites-enabled/000-default.conf'
+        ports:
+            - '80:80'
+            - '443:443'
+        env_file:
+            - '.env'
+        networks:
+            koddlo-customer-api-network:
+                ipv4_address: '10.25.0.10'
+
+networks:
+    koddlo-customer-api-network:
+        driver: 'bridge'
+        ipam:
+            config:
+                - subnet: '10.25.0.0/16'
