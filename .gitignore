@@ -8,7 +8,13 @@ docker-compose.yml
 vendor/
 phpunit.xml
 .phpunit.cache/
-.phpunit.result.cache
+config/development.config.php
+config/autoload/local.php
+config/autoload/*.local.php
+
+# Storage
+data/cache/*
+!data/cache/.gitkeep
 
 # Other
 .env

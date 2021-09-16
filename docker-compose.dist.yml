@@ -1,15 +1,14 @@
 services:
-    backend:
+    server:
         build:
-            context: 'docker/backend'
-        container_name: 'koddlo-customer-api-backend'
-        image: 'koddlo-customer-api-backend'
-        tty: 'true'
+            context: 'docker/server'
+        container_name: 'koddlo-customer-api-server'
+        tty: true
         restart: 'on-failure'
         volumes:
             - '.:/var/www'
-            - './docker/backend/config/php.ini:/usr/local/etc/php/conf.d/000-php.ini'
-            - './docker/backend/config/apache.conf:/etc/apache2/sites-enabled/000-default.conf'
+            - './docker/server/config/php.ini:/usr/local/etc/php/conf.d/000-php.ini'
+            - './docker/server/config/apache.conf:/etc/apache2/sites-enabled/000-default.conf'
         ports:
             - '80:80'
             - '443:443'
