@@ -7,7 +7,6 @@
     cacheResultFile=".phpunit.cache/test-results"
     colors="true"
     executionOrder="depends,defects"
-    forceCoversAnnotation="true"
     failOnRisky="true"
     failOnWarning="true"
     beStrictAboutOutputDuringTests="true"
@@ -25,11 +24,15 @@
         <testsuite name="Api">
             <directory>src/Api/test</directory>
         </testsuite>
+        <testsuite name="Auth">
+            <directory>src/Auth/test</directory>
+        </testsuite>
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
         <include>
             <directory suffix=".php">src/Api/src</directory>
+            <directory suffix=".php">src/Auth/src</directory>
         </include>
         <report>
             <html outputDirectory=".phpunit.cache/code-coverage-report" lowUpperBound="50" highLowerBound="90"/>

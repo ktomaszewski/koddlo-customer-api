@@ -11,6 +11,8 @@ $cacheConfig = [
 ];
 
 $configAggregator = new ConfigAggregator([
+    \Mezzio\Authentication\Basic\ConfigProvider::class,
+    \Mezzio\Authentication\ConfigProvider::class,
     Mezzio\Router\FastRouteRouter\ConfigProvider::class,
     Laminas\HttpHandlerRunner\ConfigProvider::class,
     new ArrayProvider($cacheConfig),
@@ -19,6 +21,7 @@ $configAggregator = new ConfigAggregator([
     Mezzio\Router\ConfigProvider::class,
     Laminas\Diactoros\ConfigProvider::class,
     Api\ConfigProvider::class,
+    Auth\ConfigProvider::class,
     new PhpFileProvider(realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php'),
     new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),
 ], $cacheConfig['config_cache_path']);
